@@ -39,9 +39,10 @@ try:
     Motor2.TurnStep(Dir='backward', steps=2048, stepdelay=0.002)
     Motor2.Stop()
     
-except:
+except Exception as e:
+    print(e, flush=True)
     # GPIO.cleanup()
-    print "\nMotor stop"
+    print("\nMotor stop", flush=True)
     Motor1.Stop()
     Motor2.Stop()
     exit()
